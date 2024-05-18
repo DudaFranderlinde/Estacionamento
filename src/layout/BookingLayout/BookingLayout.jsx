@@ -1,4 +1,4 @@
-import { DefaultPage } from "../../template/DefaultPage";
+import { DefaultPage } from "../../template";
 
 export function BookingLayout() {
     return (
