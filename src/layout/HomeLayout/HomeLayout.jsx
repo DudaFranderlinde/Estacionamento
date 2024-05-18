@@ -1,5 +1,8 @@
+import { DefaultPage } from "../../template/DefaultPage";
+
 export function HomeLayout() {
     return (
-        <h1>Home</h1>
+        <DefaultPage>
+        </DefaultPage>
     )
 }

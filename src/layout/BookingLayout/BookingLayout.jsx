@@ -1,5 +1,9 @@
+import { DefaultPage } from "../../template/DefaultPage";
+
 export function BookingLayout() {
     return (
-        <h1>Booking</h1>
+        <DefaultPage>
+            <h1>Booking</h1>
+        </DefaultPage>
     )
 }
