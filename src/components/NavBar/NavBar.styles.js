@@ -8,15 +8,21 @@ export const NavBar = styled.nav`
     justify-content: space-between;
     height: 100%;
 
+    h1 {
+      color: darkgreen;
+      font-weight: 400;
+      margin-left: 10px;
+    }
+
     a {
-      font-weight: 500;
+      font-weight: 300;
       text-decoration: none;
       color: #2d2d34;
     }
 
     a.active {
-      color: red;
-      font-weight: 600;
+      color: green;
+      font-weight: 500;
     }
 `
 
