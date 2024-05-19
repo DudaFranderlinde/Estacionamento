@@ -3,6 +3,7 @@ import { useEffect, useState } from "react"
 import { parkingList } from "../../service/parkList-mock"
 import { CardPark } from "../CardPark"
 import * as S from "./ListCardPark.styles"
+import { deleteBooking } from "../../service/deleteBooking"
 
 
 export function ListCardPark () {
@@ -11,6 +12,7 @@ export function ListCardPark () {
         setListParkings(parkingList)
 
     }
+
 
     useEffect(()=>{
             setListParkings(parkingList)
@@ -30,7 +32,7 @@ export function ListCardPark () {
             {listParkings.map((element, index)=> (
                 <CardPark key={index} status={element.status} blockApart={element.block} 
                 color={element.color} model={element.type} numberApart={element.apartment}
-                ownerName={element.owner} parkNumber={element.number} plate={element.plate}/>
+                ownerName={element.owner} parkNumber={element.number} plate={element.plate} button={index}/>
             ))}
         </S.DivContent>
     )

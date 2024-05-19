@@ -1,10 +1,12 @@
 import * as S from "./CardPark.styles";
 import { Flip, ToastContainer, toast } from 'react-toastify';
 import PropTypes from "prop-types";
+import { deleteBooking } from "../../service/deleteBooking";
 
 // eslint-disable-next-line react/prop-types
-export function CardPark ({parkNumber, plate, model, color, status, ownerName, numberApart, blockApart}) {
+export function CardPark ({parkNumber, plate, model, color, status, ownerName, numberApart, blockApart, button}) {
     const click = () => {
+        deleteBooking(button)
         toast.warning('Deletando!', {
             position: "bottom-right",
             autoClose: 5000,
@@ -52,4 +54,5 @@ CardPark.propType = {
     ownerName: PropTypes.string, 
     numberApart: PropTypes.number, 
     blockApart: PropTypes.number,
+    button: PropTypes.func,
 }
