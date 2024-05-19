@@ -3,6 +3,8 @@ import * as S from "./FormBooking.styles";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { newBookingSchema } from "../../validations/new-booking.schema";
 import { createBooking } from "../../service/createNewBooking";
+import { Flip, ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 export function FormBooking() {
     // eslint-disable-next-line no-unused-vars
@@ -12,6 +14,17 @@ export function FormBooking() {
 
     const submit = (e)=> {   
         createBooking(e)
+        toast.success('Reserva realizada com sucesso!', {
+            position: "bottom-right",
+            autoClose: 5000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "colored",
+            transition: Flip,
+            });
     }
 
     return (
@@ -58,6 +71,7 @@ export function FormBooking() {
                     <S.Input hidden {...register("status")} value={`Ocupada`} />
                 <S.ButtonSubimit>Reservar</S.ButtonSubimit>
             </S.DivInputs>
+            <ToastContainer/>
         </S.FormBooking>
     )
 }
