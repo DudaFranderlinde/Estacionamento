@@ -6,7 +6,6 @@ export const DivCard = styled.div`
     border: 1px solid grey;
     box-shadow: 15px 15px 75px -45px rgba(147, 149, 163, 0.5);
     margin: 20px;
-    width: 100%;
 `
 export const DivText = styled.div`
     margin: 20px 30px;

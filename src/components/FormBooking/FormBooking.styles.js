@@ -6,7 +6,6 @@ export const FormBooking = styled.form`
     background-color: white;
     border-radius: 5px;
     box-shadow: 15px 15px 75px -45px rgba(188,182,182,0.75);
-    margin: auto;
     display: flex;
     flex-direction: column;
     justify-content: center; 

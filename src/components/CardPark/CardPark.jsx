@@ -27,15 +27,15 @@ export function CardPark ({parkNumber, plate, model, color, status, ownerName, n
             </S.DivContent>
             <S.DivContent>
                 <S.DivText>
-                    <S.Text>Placa do Veículo: {plate}</S.Text>
-                    <S.Text>Modelo do Veículo: {model} </S.Text>
-                    <S.Text>Cor do Veículo: {color}</S.Text>
+                    <S.Text>Placa do Veículo: {plate? plate: "N/A"}</S.Text>
+                    <S.Text>Tipo de Veículo: {model? model: "N/A"} </S.Text>
+                    <S.Text>Cor do Veículo: {color? color: "N/A"}</S.Text>
                     <S.Text>Status: {status}</S.Text>
                 </S.DivText>
                 <S.DivText>
-                    <S.Text>Nome do proprietário: {ownerName} </S.Text>
-                    <S.Text>Número do Apartamento: {numberApart}</S.Text>
-                    <S.Text>Bloco do Apartamento: {blockApart}</S.Text>
+                    <S.Text>Nome do proprietário: {ownerName? ownerName: "N/A"} </S.Text>
+                    <S.Text>Número do Apartamento: {numberApart? numberApart: "N/A"}</S.Text>
+                    <S.Text>Bloco do Apartamento: {blockApart? blockApart: "N/A"}</S.Text>
                 </S.DivText>
             </S.DivContent>
             <ToastContainer/>
@@ -45,11 +45,11 @@ export function CardPark ({parkNumber, plate, model, color, status, ownerName, n
 
 CardPark.propType = {
     parkNumber: PropTypes.number.isRequired, 
-    plate: PropTypes.string.isRequired, 
-    model: PropTypes.string.isRequired, 
-    color: PropTypes.string.isRequired, 
+    plate: PropTypes.string, 
+    model: PropTypes.string, 
+    color: PropTypes.string, 
     status: PropTypes.string.isRequired, 
-    ownerName: PropTypes.string.isRequired, 
-    numberApart: PropTypes.number.isRequired, 
-    blockApart: PropTypes.number.isRequired,
+    ownerName: PropTypes.string, 
+    numberApart: PropTypes.number, 
+    blockApart: PropTypes.number,
 }
