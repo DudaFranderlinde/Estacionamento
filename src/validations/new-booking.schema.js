@@ -10,4 +10,5 @@ export const newBookingSchema = yup.object({
     model: yup.string().required("Campo Obrigatório!"),
     color: yup.string().required("Campo Obrigatório!"),
     number_park: yup.number().typeError("Necessário ser um número").required("Campo Obrigatório"),
+    status: yup.string(),
 })

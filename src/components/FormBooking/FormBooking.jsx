@@ -2,6 +2,7 @@ import { useForm } from "react-hook-form";
 import * as S from "./FormBooking.styles";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { newBookingSchema } from "../../validations/new-booking.schema";
+import { createBooking } from "../../service/createNewBooking";
 
 export function FormBooking() {
     // eslint-disable-next-line no-unused-vars
@@ -9,9 +10,8 @@ export function FormBooking() {
         resolver: yupResolver(newBookingSchema)
     });
 
-    const submit = (e)=> {
-        console.log(e);
-        console.log("Entrou");
+    const submit = (e)=> {   
+        createBooking(e)
     }
 
     return (
@@ -55,6 +55,7 @@ export function FormBooking() {
                     <S.Input {...register("number_park")} required={errors.number_park?.message} />
                     {errors.number_park && <S.Alert>{errors.number_park?.message}</S.Alert>}
                 </S.DivSpare>
+                    <S.Input hidden {...register("status")} value={`Ocupada`} />
                 <S.ButtonSubimit>Reservar</S.ButtonSubimit>
             </S.DivInputs>
         </S.FormBooking>
