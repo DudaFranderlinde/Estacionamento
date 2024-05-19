@@ -1,11 +1,11 @@
 const key = "estacionamento";
 
-const save = (resource, data) => {
-  sessionStorage.setItem(key.concat(resource), JSON.stringify(data));
+const save = (data) => {
+  sessionStorage.setItem(key, JSON.stringify(data));
 };
 
-const get = (resource) => {
-  const data = sessionStorage.getItem(key.concat(resource));
+const get = () => {
+  const data = sessionStorage.getItem(key);
   if (data) return JSON.parse(data);
   return null;
 };
