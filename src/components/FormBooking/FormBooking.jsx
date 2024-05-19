@@ -13,7 +13,7 @@ export function FormBooking() {
     });
 
     const submit = (e)=> {   
-        createBooking(e)
+        createBooking(e.apartment_number, e.apartment_block, e.color, e.number_park, e.owner_name, e.plate, e.status, e.model)
         toast.success('Reserva realizada com sucesso!', {
             position: "bottom-right",
             autoClose: 5000,

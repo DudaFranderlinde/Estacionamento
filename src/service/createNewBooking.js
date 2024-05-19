@@ -1,10 +1,8 @@
+import { parkingList } from "./parkList-mock";
 import { storageService } from "./storageService";
 
 
-export function createBooking(newBooking) {
-    let storageData = storageService.get();
-    let list = storageData === null ? [] : storageData;
-
-    list.push(newBooking);
-    storageService.save(list);
+export function createBooking(apartment, block, color, number, owner, plate, status, type) {
+    parkingList.push({apartment, block, color, number, owner, plate, status, type })
+    console.log(parkingList);
 }
